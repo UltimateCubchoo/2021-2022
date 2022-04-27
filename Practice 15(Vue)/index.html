@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue Practice</title>
+    <link rel="stylesheet" href="include/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body style="padding: 1vw;font-family: Verdana, Geneva, Tahoma, sans-serif;">
+
+    <!--Main Div-->
+    <main id="app">
+        <h1>{{title}}</h1>
+        <p>{{message}}</p>
+
+        <h6>Practice 1: Toggle Visibility</h6>
+        <div class="input-group" style="width: 20vw;">
+            <input type="password" class="form-control" placeholder="Password" v-model="password" id="password">
+            <span class="input-group-text" id="basic-addon2" style="cursor: pointer;" v-on:click="showPass()"><span v-bind:class="icon"></span></span>
+        </div><br>
+
+        <h6>Practice 2: Toggle Size</h6>
+        <p>{{paragraph}}</p>
+        <button class="btn btn-primary" v-on:click="expandP()">Toggle Visibility</button>
+        <br><br>
+
+        <h6>Practice 3: Calculate Tip</h6>
+        <p>What was the total bill</p>
+        <div class="input-group">
+            <input class="form-control" type="text" v-model="tip.total" v-on:change="calcTip()">
+        </div>
+        <p>How good was the service</p>
+        <div class="input">
+            <select class="form-control" v-model="tip.rate" v-on:change="calcTip()">
+                <option value="0.25">Great</option>
+                <option value="0.2" selected>Good</option>
+                <option value="0.1">Okay</option>
+                <option value="0.05">Poor</option>
+            </select>
+        </div>
+        <p>How many people are sharing the bill?</p>
+        <div class="input-group">
+            <input type="number" class="form-control" v-model="tip.people" v-on:change="calcTip()" min="1">
+        </div><br><br>
+        <div style="background-color: seagreen; border: darkgreen solid 1px;padding: 1vw;">
+            <p>Tip Amount:&nbsp; <strong>${{tip.tip}} / person</strong></p>
+        </div><br><br>
+
+
+        <h6>Practice 4: Changing Images</h6>
+        <div :style="catCSS">
+        </div><br>
+        <p>{{catCSS}}</p>
+        <button class="btn btn-primary" v-on:click="switchImg(0)">Back</button>&nbsp;
+        <button class="btn btn-primary" v-on:click="switchImg(1)">Next</button><br><br>
+
+
+
+
+        <h6>Practice 5: Shopping List</h6>
+        <div class="input-group" >
+            <input type="text" class="form-control"
+                v-on:keydown="(event) => newItem(event)" id="newItem">
+        </div><br>
+        <ul>
+            <li v-for="item in list" v-on:click="removeItem(item)" style="cursor: pointer"><a href="#">{{item}}</a></li>
+        </ul>
+
+    </main>
+
+    <!--Scripts-->
+    <script src="include/vue.js"></script>
+    <script src="scripts.js"></script>
+</body>
+</html>

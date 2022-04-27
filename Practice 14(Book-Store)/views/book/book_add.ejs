@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include("../partials/head") %>
+<body>
+    <%- include("../partials/header") %>
+    <main>
+      <form method="post" action="/book/insBook">
+        <div class="container insCon" >
+          <h1>Add a book</h1>
+          <div class="row">
+            <div class="col">Title</div>
+            <div class="col"><input type="text" name="title" id=""></div>
+          </div>
+          <div class="row">
+            <div class="col">Author</div>
+            <div class="col"><input type="text" name="author" id=""></div>
+          </div>
+          <div class="row">
+            <div class="col">Genre</div>
+            <div class="col">
+              <select name="genre" id="">
+                <option value="">Fantasy</option>
+                <option value="">Sci-Fi</option>
+                <option value="">Mystery</option>
+                <option value="">Thriller/Horror</option>
+                <option value="">Romance</option>
+              </select>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+                <p>Rating</p>
+                <div ma id="preview-rating">
+                  <span class="preview-star fa fa-star-o"></span>
+                  <span class="preview-star fa fa-star-o"></span>
+                  <span class="preview-star fa fa-star-o"></span>
+                  <span class="preview-star fa fa-star-o"></span>
+                  <span class="preview-star fa fa-star-o"></span>
+                </div>
+            </div>
+            <div class="col"><input type="number" name="rating" id="" min="0" max="10" onchange="changeRating(this);"></div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <div class="card-preview" style="border: 2px white solid;" id="display">
+                <img src="" alt="" id="img-preview">
+              </div><br>
+              <input type="file" name="image" id="" onchange="displayImg(this)"><br><br>
+              <button class="btn btn-light">Submit</button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </main>
+    <%-include("../partials/footer") %>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="../javascripts/scripts.js"></script>
+    <script>
+      window.onload = function(){
+        loadCSS();
+      }
+
+      function displayImg(input){
+        if(input.files && input.files[0]){
+          var fr = new FileReader();
+          fr.onload = function(e){
+            $("#display")
+              .css("background-image", `url('${e.target.result}')`);
+          }
+          fr.readAsDataURL(input.files[0]);
+        }
+      }
+
+      function changeRating(input){
+        var rating = input.value;
+        var html = drawRating(rating);
+        $("#preview-rating").html(html);
+      }
+      
+    </script>
+</body>
+</html>

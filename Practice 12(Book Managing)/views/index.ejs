@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%= title%>
+    </title>
+
+    <!---Stylesheets-->
+    <link rel="stylesheet" href="stylesheets/style.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="stylesheets/bootstrap.min.css">
+    <link href="images/favicon.ico" rel="icon" type="image/x-icon" />
+</head>
+
+<body>
+    <%- include("partials/header") %>
+        <main style="margin-bottom: 4vw;">
+            <h1>Welcome to book management!!!</h1>
+            <table class="display" id="bookView">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Book Title</th>
+                        <th>Author</th>
+                        <th>Image</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody id="bookBody" class="tbody-dark"></tbody>
+            </table>
+        </main>
+        <%- include("partials/footer") %>
+
+            <!---Scripts-->
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+                integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+                crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            <script type="text/javascript" charset="utf8"
+                src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+            <script type="text/javascript" charset="utf8">
+                $().ready(function () {
+                    console.log("Onload");
+                    $.get("/getData", function (data, err) {
+                        if(err) console.log(err);
+
+                        //Creating the html for the set amount of entries in the database
+                        var html = "";
+                        for (var i = 0; i < data.length; i++) {
+                            var imgSrc = "images/" + data[i].image;
+                            html += `
+                                    <tr>
+                                        <td>${data[i].title}</td>
+                                        <td>${data[i].author}</td>
+                                        <td><img src="${imgSrc}" width="64" height="64"></td>
+                                        <td>${data[i].description}</td>
+                                    </tr>
+                    `;
+                        }
+                        if(data.length == 0)//In case no data is in the table or the database is missing
+                            html = "<h3>No Data was found</h3>";
+
+                        $("#bookBody").html(html);
+
+                    });
+                    $('#bookView').DataTable();//Setting the Datatable with the formatting
+                });
+            </script>
+</body>
+
+</html>
