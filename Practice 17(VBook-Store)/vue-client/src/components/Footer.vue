@@ -1,0 +1,6 @@
+<template>
+    <footer>
+    <!---Looks better without lol-->
+    <h1 style="text-align: left;">&nbsp;&copy; Copyright ME&trade;</h1>
+    </footer>
+</template>
