@@ -9,7 +9,7 @@ router.get("/test", function(req, res, next){
   res.end();
 });
 
-/* Mongo Actions */
+/* GET DATA */
 
 router.get('/clients', function(req, res, next) {
   mongoClient.connect(url, { useUnifiedTopology: true }, function(err, db){
@@ -22,5 +22,28 @@ router.get('/clients', function(req, res, next) {
     });
   });
 });
+
+router.get('instructors', function(req, res, next){
+  mongoClient.connect(url, { useUnifiedTopology: true }, function(err, db){
+    if(err) throw err;
+    let dbo = db.db("first-mongo");
+    dbo.collection("instructors").find().toArray(function(err, data){
+      if(err) throw err;
+      console.log(JSON.stringify(data));
+      res.json(JSON.stringify(data));
+    });
+  });
+});
+
+/* INS DATA */
+router.get('/insClient', function(req, res, next){
+  mongoClient.connect(url, {useUnifiedTopology: true}, function(err, db){
+
+  });
+});
+
+/* UPD DATA */
+
+/*DEL DATA */
 
 module.exports = router;
