@@ -4,7 +4,13 @@ const mongodb = require('mongodb');
 const mongoClient = mongodb.MongoClient;
 const url = "mongodb://localhost:27017/first-mongo"
 
+router.get("/test", function(req, res, next){
+  console.log("THIS IS A TEST");
+  res.end();
+});
+
 /* Mongo Actions */
+
 router.get('/clients', function(req, res, next) {
   mongoClient.connect(url, { useUnifiedTopology: true }, function(err, db){
     if(err) throw err;

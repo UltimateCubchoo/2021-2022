@@ -1,2 +1,2 @@
 curl --request GET \
-    --url http://localhost:3000/client
+    --url http://localhost:3030/clients
