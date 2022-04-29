@@ -1,0 +1,1 @@
+select * into dup_countries from Countries;

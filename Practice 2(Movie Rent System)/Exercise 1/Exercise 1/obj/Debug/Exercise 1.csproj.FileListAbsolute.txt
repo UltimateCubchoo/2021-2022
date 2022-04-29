@@ -1,0 +1,13 @@
+D:\School stuff\Tech\Database\Practice 3(SQL in Windows Forms)\Exercise 1\Exercise 1\bin\Debug\Exercise 1.exe.config
+D:\School stuff\Tech\Database\Practice 3(SQL in Windows Forms)\Exercise 1\Exercise 1\bin\Debug\Exercise 1.exe
+D:\School stuff\Tech\Database\Practice 3(SQL in Windows Forms)\Exercise 1\Exercise 1\bin\Debug\Exercise 1.pdb
+D:\School stuff\Tech\Database\Practice 3(SQL in Windows Forms)\Exercise 1\Exercise 1\obj\Debug\Exercise 1.csprojAssemblyReference.cache
+D:\School stuff\Tech\Database\Practice 3(SQL in Windows Forms)\Exercise 1\Exercise 1\obj\Debug\Exercise_1.Form1.resources
+D:\School stuff\Tech\Database\Practice 3(SQL in Windows Forms)\Exercise 1\Exercise 1\obj\Debug\Exercise_1.Properties.Resources.resources
+D:\School stuff\Tech\Database\Practice 3(SQL in Windows Forms)\Exercise 1\Exercise 1\obj\Debug\Exercise 1.csproj.GenerateResource.cache
+D:\School stuff\Tech\Database\Practice 3(SQL in Windows Forms)\Exercise 1\Exercise 1\obj\Debug\Exercise 1.csproj.CoreCompileInputs.cache
+D:\School stuff\Tech\Database\Practice 3(SQL in Windows Forms)\Exercise 1\Exercise 1\obj\Debug\Exercise 1.exe
+D:\School stuff\Tech\Database\Practice 3(SQL in Windows Forms)\Exercise 1\Exercise 1\obj\Debug\Exercise 1.pdb
+D:\School stuff\Tech\Database\Practice 3(SQL in Windows Forms)\Exercise 1\Exercise 1\obj\Debug\Exercise_1.RentMain_Form.resources
+D:\School stuff\Tech\Database\Practice 3(SQL in Windows Forms)\Exercise 1\Exercise 1\obj\Debug\Exercise_1.UserMain_Form.resources
+D:\School stuff\Tech\Database\Practice 3(SQL in Windows Forms)\Exercise 1\Exercise 1\obj\Debug\Exercise_1.MovieMain_Form.resources

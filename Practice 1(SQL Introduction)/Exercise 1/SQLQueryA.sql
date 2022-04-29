@@ -1,0 +1,1 @@
+Select lname From Employees;

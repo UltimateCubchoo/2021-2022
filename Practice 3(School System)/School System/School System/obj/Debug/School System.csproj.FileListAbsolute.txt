@@ -1,0 +1,36 @@
+D:\School stuff\Tech\Programming\C#\Database\Practice 6(MySQL in Windows Forms)\Exercise 2(School System)\School System\School System\obj\Debug\School System.csprojAssemblyReference.cache
+D:\School stuff\Tech\Programming\C#\Database\Practice 6(MySQL in Windows Forms)\Exercise 2(School System)\School System\School System\obj\Debug\School_System.LoginForm.resources
+D:\School stuff\Tech\Programming\C#\Database\Practice 6(MySQL in Windows Forms)\Exercise 2(School System)\School System\School System\obj\Debug\School_System.Properties.Resources.resources
+D:\School stuff\Tech\Programming\C#\Database\Practice 6(MySQL in Windows Forms)\Exercise 2(School System)\School System\School System\obj\Debug\School System.csproj.GenerateResource.cache
+D:\School stuff\Tech\Programming\C#\Database\Practice 6(MySQL in Windows Forms)\Exercise 2(School System)\School System\School System\obj\Debug\School System.csproj.CoreCompileInputs.cache
+D:\School stuff\Tech\Programming\C#\Database\Practice 6(MySQL in Windows Forms)\Exercise 2(School System)\School System\School System\bin\Debug\School System.exe.config
+D:\School stuff\Tech\Programming\C#\Database\Practice 6(MySQL in Windows Forms)\Exercise 2(School System)\School System\School System\bin\Debug\School System.exe
+D:\School stuff\Tech\Programming\C#\Database\Practice 6(MySQL in Windows Forms)\Exercise 2(School System)\School System\School System\bin\Debug\School System.pdb
+D:\School stuff\Tech\Programming\C#\Database\Practice 6(MySQL in Windows Forms)\Exercise 2(School System)\School System\School System\bin\Debug\BouncyCastle.Crypto.dll
+D:\School stuff\Tech\Programming\C#\Database\Practice 6(MySQL in Windows Forms)\Exercise 2(School System)\School System\School System\bin\Debug\Google.Protobuf.dll
+D:\School stuff\Tech\Programming\C#\Database\Practice 6(MySQL in Windows Forms)\Exercise 2(School System)\School System\School System\bin\Debug\K4os.Compression.LZ4.dll
+D:\School stuff\Tech\Programming\C#\Database\Practice 6(MySQL in Windows Forms)\Exercise 2(School System)\School System\School System\bin\Debug\K4os.Compression.LZ4.Streams.dll
+D:\School stuff\Tech\Programming\C#\Database\Practice 6(MySQL in Windows Forms)\Exercise 2(School System)\School System\School System\bin\Debug\K4os.Hash.xxHash.dll
+D:\School stuff\Tech\Programming\C#\Database\Practice 6(MySQL in Windows Forms)\Exercise 2(School System)\School System\School System\bin\Debug\MySql.Data.dll
+D:\School stuff\Tech\Programming\C#\Database\Practice 6(MySQL in Windows Forms)\Exercise 2(School System)\School System\School System\bin\Debug\System.Buffers.dll
+D:\School stuff\Tech\Programming\C#\Database\Practice 6(MySQL in Windows Forms)\Exercise 2(School System)\School System\School System\bin\Debug\System.Memory.dll
+D:\School stuff\Tech\Programming\C#\Database\Practice 6(MySQL in Windows Forms)\Exercise 2(School System)\School System\School System\bin\Debug\System.Numerics.Vectors.dll
+D:\School stuff\Tech\Programming\C#\Database\Practice 6(MySQL in Windows Forms)\Exercise 2(School System)\School System\School System\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\School stuff\Tech\Programming\C#\Database\Practice 6(MySQL in Windows Forms)\Exercise 2(School System)\School System\School System\bin\Debug\Ubiety.Dns.Core.dll
+D:\School stuff\Tech\Programming\C#\Database\Practice 6(MySQL in Windows Forms)\Exercise 2(School System)\School System\School System\bin\Debug\Zstandard.Net.dll
+D:\School stuff\Tech\Programming\C#\Database\Practice 6(MySQL in Windows Forms)\Exercise 2(School System)\School System\School System\bin\Debug\Google.Protobuf.pdb
+D:\School stuff\Tech\Programming\C#\Database\Practice 6(MySQL in Windows Forms)\Exercise 2(School System)\School System\School System\bin\Debug\Google.Protobuf.xml
+D:\School stuff\Tech\Programming\C#\Database\Practice 6(MySQL in Windows Forms)\Exercise 2(School System)\School System\School System\bin\Debug\K4os.Compression.LZ4.xml
+D:\School stuff\Tech\Programming\C#\Database\Practice 6(MySQL in Windows Forms)\Exercise 2(School System)\School System\School System\bin\Debug\K4os.Compression.LZ4.Streams.xml
+D:\School stuff\Tech\Programming\C#\Database\Practice 6(MySQL in Windows Forms)\Exercise 2(School System)\School System\School System\bin\Debug\K4os.Hash.xxHash.xml
+D:\School stuff\Tech\Programming\C#\Database\Practice 6(MySQL in Windows Forms)\Exercise 2(School System)\School System\School System\bin\Debug\MySql.Data.xml
+D:\School stuff\Tech\Programming\C#\Database\Practice 6(MySQL in Windows Forms)\Exercise 2(School System)\School System\School System\bin\Debug\System.Buffers.xml
+D:\School stuff\Tech\Programming\C#\Database\Practice 6(MySQL in Windows Forms)\Exercise 2(School System)\School System\School System\bin\Debug\System.Memory.xml
+D:\School stuff\Tech\Programming\C#\Database\Practice 6(MySQL in Windows Forms)\Exercise 2(School System)\School System\School System\bin\Debug\System.Numerics.Vectors.xml
+D:\School stuff\Tech\Programming\C#\Database\Practice 6(MySQL in Windows Forms)\Exercise 2(School System)\School System\School System\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\School stuff\Tech\Programming\C#\Database\Practice 6(MySQL in Windows Forms)\Exercise 2(School System)\School System\School System\obj\Debug\School System.csproj.CopyComplete
+D:\School stuff\Tech\Programming\C#\Database\Practice 6(MySQL in Windows Forms)\Exercise 2(School System)\School System\School System\obj\Debug\School System.exe
+D:\School stuff\Tech\Programming\C#\Database\Practice 6(MySQL in Windows Forms)\Exercise 2(School System)\School System\School System\obj\Debug\School System.pdb
+D:\School stuff\Tech\Programming\C#\Database\Practice 6(MySQL in Windows Forms)\Exercise 2(School System)\School System\School System\obj\Debug\School_System.MainForm.resources
+D:\School stuff\Tech\Programming\C#\Database\Practice 6(MySQL in Windows Forms)\Exercise 2(School System)\School System\School System\obj\Debug\School_System.ManageForm.resources
+D:\School stuff\Tech\Programming\C#\Database\Practice 6(MySQL in Windows Forms)\Exercise 2(School System)\School System\School System\obj\Debug\School_System.QueryForm.resources

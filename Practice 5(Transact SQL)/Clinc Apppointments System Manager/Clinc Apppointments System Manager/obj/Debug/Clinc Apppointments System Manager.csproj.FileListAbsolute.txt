@@ -1,0 +1,16 @@
+D:\School stuff\Tech\Programming\C#\Database\Practice 5(Transact SQL)\Clinc Apppointments System Manager\Clinc Apppointments System Manager\bin\Debug\Clinc Apppointments System Manager.exe.config
+D:\School stuff\Tech\Programming\C#\Database\Practice 5(Transact SQL)\Clinc Apppointments System Manager\Clinc Apppointments System Manager\bin\Debug\Clinc Apppointments System Manager.exe
+D:\School stuff\Tech\Programming\C#\Database\Practice 5(Transact SQL)\Clinc Apppointments System Manager\Clinc Apppointments System Manager\bin\Debug\Clinc Apppointments System Manager.pdb
+D:\School stuff\Tech\Programming\C#\Database\Practice 5(Transact SQL)\Clinc Apppointments System Manager\Clinc Apppointments System Manager\obj\Debug\Clinc Apppointments System Manager.csprojAssemblyReference.cache
+D:\School stuff\Tech\Programming\C#\Database\Practice 5(Transact SQL)\Clinc Apppointments System Manager\Clinc Apppointments System Manager\obj\Debug\Clinc_Apppointments_System_Manager.Login_Form.resources
+D:\School stuff\Tech\Programming\C#\Database\Practice 5(Transact SQL)\Clinc Apppointments System Manager\Clinc Apppointments System Manager\obj\Debug\Clinc_Apppointments_System_Manager.Properties.Resources.resources
+D:\School stuff\Tech\Programming\C#\Database\Practice 5(Transact SQL)\Clinc Apppointments System Manager\Clinc Apppointments System Manager\obj\Debug\Clinc Apppointments System Manager.csproj.GenerateResource.cache
+D:\School stuff\Tech\Programming\C#\Database\Practice 5(Transact SQL)\Clinc Apppointments System Manager\Clinc Apppointments System Manager\obj\Debug\Clinc Apppointments System Manager.csproj.CoreCompileInputs.cache
+D:\School stuff\Tech\Programming\C#\Database\Practice 5(Transact SQL)\Clinc Apppointments System Manager\Clinc Apppointments System Manager\obj\Debug\Clinc Apppointments System Manager.exe
+D:\School stuff\Tech\Programming\C#\Database\Practice 5(Transact SQL)\Clinc Apppointments System Manager\Clinc Apppointments System Manager\obj\Debug\Clinc Apppointments System Manager.pdb
+D:\School stuff\Tech\Programming\C#\Database\Practice 5(Transact SQL)\Clinc Apppointments System Manager\Clinc Apppointments System Manager\obj\Debug\Clinc_Apppointments_System_Manager.AccountForm.resources
+D:\School stuff\Tech\Programming\C#\Database\Practice 5(Transact SQL)\Clinc Apppointments System Manager\Clinc Apppointments System Manager\obj\Debug\Clinc_Apppointments_System_Manager.ClinicForm.resources
+D:\School stuff\Tech\Programming\C#\Database\Practice 5(Transact SQL)\Clinc Apppointments System Manager\Clinc Apppointments System Manager\obj\Debug\Clinc_Apppointments_System_Manager.AdminForm.resources
+D:\School stuff\Tech\Programming\C#\Database\Practice 5(Transact SQL)\Clinc Apppointments System Manager\Clinc Apppointments System Manager\obj\Debug\Clinc_Apppointments_System_Manager.DoctorForm.resources
+D:\School stuff\Tech\Programming\C#\Database\Practice 5(Transact SQL)\Clinc Apppointments System Manager\Clinc Apppointments System Manager\obj\Debug\Clinc_Apppointments_System_Manager.PatientForm.resources
+D:\School stuff\Tech\Programming\C#\Database\Practice 5(Transact SQL)\Clinc Apppointments System Manager\Clinc Apppointments System Manager\obj\Debug\Clinc_Apppointments_System_Manager.AppointmentForm.resources

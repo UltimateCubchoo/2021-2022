@@ -1,0 +1,2 @@
+select content
+from Boxes;
