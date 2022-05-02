@@ -36,9 +36,12 @@ router.get('instructors', function(req, res, next){
 });
 
 /* INS DATA */
-router.get('/insClient', function(req, res, next){
+router.post('/insClient', function(req, res, next){
+  let params = req.body;
   mongoClient.connect(url, {useUnifiedTopology: true}, function(err, db){
-
+    if(err) throw err;
+    let dbo = db.db("first-mongo");
+    dbo.collection.insert();
   });
 });
 

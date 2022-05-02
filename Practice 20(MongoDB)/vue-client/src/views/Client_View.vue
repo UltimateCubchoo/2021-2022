@@ -2,15 +2,31 @@
 import {defineComponent} from 'vue'
 import axios from "axios"
 import Datatable from "../components/Datatable.vue"
+import Modal from "../components/Modal.vue"
 
 export default defineComponent({
     components:{
-        Datatable: Datatable
+        Datatable: Datatable,
+        Modal: Modal
     },
    data(){
        return {
            tableData: Object,
            flag: false,
+           showUpd: false
+       }
+   },
+   methods:{
+       del(index){
+           console.log(index);
+       },
+       updShow(index){
+           this.toggleUpd();
+       },
+       toggleUpd(){
+           if(this.showUpd == true)
+            this.showUpd = false;
+            else this.showUpd = true;
        }
    },
    mounted: async function(){
@@ -36,7 +52,6 @@ async function getData() {
 <template>
 <div>
     <h1>Clients</h1>
-    <button class="btn btn-primary">Create</button><br>
     <button class="btn btn-success">Insert</button><br>
     <button class="btn btn-danger">Delete</button><br>
     <button class="btn btn-warning">Update</button><br><br>
@@ -47,6 +62,7 @@ async function getData() {
                 <th>Lname</th>
                 <th>Address</th>
                 <th>Phone</th>
+                <th>Actions</th>
             </tr>
         </template>
         <template v-slot:tbody >
@@ -55,9 +71,21 @@ async function getData() {
                 <td>{{obj.lname}}</td>
                 <td>{{obj.address}}</td>
                 <td>{{obj.phone}}</td>
+                <td>
+                    <span class="fa fa-pencil" style="color: #00a100; margin-right: 2rem; cursor: pointer;" @click="updShow(obj._id)"/>
+                    <span class="fa fa-minus-circle" style="color: #a10000; cursor: pointer;" @click="del(obj._id)"/>
+                </td>
             </tr>
         </template>
     </Datatable>
+
+    <Modal id="updModal" :show="showUpd" @close="toggleUpd()">
+        <template v-slot:header>
+            <h1>UPDATE MODAL</h1>
+        </template>
+        <template v-slot:body>
+        </template>
+    </Modal>
 </div>
 </template>
 
@@ -70,4 +98,5 @@ async function getData() {
         margin-bottom: 1rem;
         width: 25rem;
     }
+
 </style>
