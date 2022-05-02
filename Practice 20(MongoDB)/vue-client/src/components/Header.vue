@@ -24,15 +24,15 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link  " href="/group_view" id="navbar " role="button"
-                                data-bs-toggle=" " aria-expanded="false">
-                                Groups
-                            </a>
-                        </li>
-                        <li class="nav-item">
                             <a class="nav-link  " href="/inscription_view" id="navbar " role="button"
                                 data-bs-toggle=" " aria-expanded="false">
                                 Inscriptions
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link  " href="/group_view" id="navbar " role="button"
+                                data-bs-toggle=" " aria-expanded="false">
+                                Groups
                             </a>
                         </li>
                     </ul>

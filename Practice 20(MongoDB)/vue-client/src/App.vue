@@ -5,10 +5,16 @@ import { defineComponent } from "vue"
 import Header from "./components/Header.vue"
 import Home from "./views/Home.vue"
 import Client_View from "./views/Client_View.vue"
+import Instructor_View from "./views/Instructor_View.vue"
+import Inscription_View from "./views/Inscription_View.vue"
+import Group_View from "./views/Group_View.vue"
 
 const routes = {
   "/": Home,
-  "/client_view": Client_View
+  "/client_view": Client_View,
+  "/instructor_view": Instructor_View,
+  "/inscription_view": Inscription_View,
+  "/group_view": Group_View
 };
 
 export default defineComponent({
