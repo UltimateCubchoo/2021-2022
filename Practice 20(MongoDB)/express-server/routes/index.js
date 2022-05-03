@@ -48,5 +48,10 @@ router.post('/insClient', function(req, res, next){
 /* UPD DATA */
 
 /*DEL DATA */
+router.post("del", function(req, res, next){
+  let params = req.body;
+  console.log(params);
+  res.end();
+});
 
 module.exports = router;

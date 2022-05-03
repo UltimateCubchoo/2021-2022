@@ -9,10 +9,7 @@ export default defineComponent({
 <template>
 <div>
     <h1>Home</h1>
-    <button class="btn btn-primary">Create</button><br>
-    <button class="btn btn-success">Insert</button><br>
-    <button class="btn btn-danger">Delete</button><br>
-    <button class="btn btn-warning">Update</button>
+    <p>Making my first project with mongo db.</p>
 </div>
 </template>
 

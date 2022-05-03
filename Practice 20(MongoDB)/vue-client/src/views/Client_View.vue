@@ -13,21 +13,38 @@ export default defineComponent({
        return {
            tableData: Object,
            flag: false,
-           showUpd: false
+           currentID: null,
+           showUpd: false,
+           showIns: false
        }
    },
    methods:{
-       del(index){
-           console.log(index);
-       },
-       updShow(index){
-           this.toggleUpd();
-       },
-       toggleUpd(){
-           if(this.showUpd == true)
+    toggleIns(){
+        if(this.showIns == true)
+            this.showIns = false;
+        else this.showIns = true;
+    },
+    submit: async () => {
+        
+    },
+    del: async (index) => {
+        console.log(index);
+        await axios.post("http://localhost:3030/del", JSON.stringify({index: index}));
+    },
+    updShow(index){
+        this.toggleUpd();
+        this.currentID = index;
+        console.log(this.currentID);
+    },
+    toggleUpd(){
+        if(this.showUpd == true)
             this.showUpd = false;
             else this.showUpd = true;
-       }
+    },
+    save: async () => {
+
+    },
+
    },
    mounted: async function(){
        this.tableData = await getData();
@@ -52,9 +69,7 @@ async function getData() {
 <template>
 <div>
     <h1>Clients</h1>
-    <button class="btn btn-success">Insert</button><br>
-    <button class="btn btn-danger">Delete</button><br>
-    <button class="btn btn-warning">Update</button><br><br>
+    <button class="btn btn-success" @click="toggleIns()">Insert</button><br>
     <Datatable v-if="flag">
         <template v-slot:thead>
             <tr>
@@ -78,6 +93,14 @@ async function getData() {
             </tr>
         </template>
     </Datatable>
+
+    <Modal id="insModal" :show="showIns" @close="toggleIns()">
+        <template v-slot:header>
+            <h1>INSERT MODAL</h1>
+        </template>
+        <template v-slot:body>
+        </template>
+    </Modal>
 
     <Modal id="updModal" :show="showUpd" @close="toggleUpd()">
         <template v-slot:header>
