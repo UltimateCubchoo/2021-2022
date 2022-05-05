@@ -72,8 +72,20 @@ function get(req, res, collection){
       res.end();
     });
   }
+  
+  // function convert(req, res, collection){
+  //   var json = Object.keys(req.body)[0];
+  //   var obj = JSON.parse(json);
+  //   Object.keys(obj).forEach(function(key, i){
+  //     var dateCheck = key.indexOf("date");
+  //     if(dateCheck == 1){
+  //       obj[key] = new mongodb.value
+  //     }
+  //   });
+  // }
 
   module.exports.get = get;
   module.exports.insert = insert;
   module.exports.update = update;
   module.exports.delet = delet;
+  // module.exports.convert = convert;

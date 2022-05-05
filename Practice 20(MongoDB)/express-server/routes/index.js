@@ -24,6 +24,7 @@ router.post('/insInstructor', function(req, res, next){
   crud.insert(req, res, "instructors");
 });
 router.post('/insInscription', function(req, res, next){
+  // crud.convert(req, res, "inscriptions");
   crud.insert(req, res, "inscriptions");
 });
 router.post('/insGroup', function(req, res, next){
@@ -32,16 +33,16 @@ router.post('/insGroup', function(req, res, next){
 
 /* UPD DATA */
 router.post("/updClient", function(req, res, next){
-  crud.update(req, res, "clients")
+  crud.update(req, res, "clients");
 });
 router.post("/updInstructor", function(req, res, next){
-  crud.update(req, res, "instructors")
+  crud.update(req, res, "instructors");
 });
 router.post("/updInscription", function(req, res, next){
-  crud.update(req, res, "inscriptions")
+  crud.update(req, res, "inscriptions");
 });
 router.post("/updGroup", function(req, res, next){
-  crud.update(req, res, "groups")
+  crud.update(req, res, "groups");
 });
 
 /*DEL DATA */
