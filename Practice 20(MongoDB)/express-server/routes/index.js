@@ -1,57 +1,62 @@
 var express = require('express');
 var router = express.Router();
-const mongodb = require('mongodb');
-const mongoClient = mongodb.MongoClient;
-const url = "mongodb://localhost:27017/first-mongo"
-
-router.get("/test", function(req, res, next){
-  console.log("THIS IS A TEST");
-  res.end();
-});
+var crud = require("./crud.js");
 
 /* GET DATA */
-
 router.get('/clients', function(req, res, next) {
-  mongoClient.connect(url, { useUnifiedTopology: true }, function(err, db){
-    if(err) throw err;
-    let dbo = db.db("first-mongo");
-    dbo.collection("clients").find().toArray(function(err, data){
-      if(err) throw err;
-      console.log(JSON.stringify(data));
-      res.json(JSON.stringify(data));
-    });
-  });
+  crud.get(req, res, "clients");
 });
-
-router.get('instructors', function(req, res, next){
-  mongoClient.connect(url, { useUnifiedTopology: true }, function(err, db){
-    if(err) throw err;
-    let dbo = db.db("first-mongo");
-    dbo.collection("instructors").find().toArray(function(err, data){
-      if(err) throw err;
-      console.log(JSON.stringify(data));
-      res.json(JSON.stringify(data));
-    });
-  });
+router.get('/instructors', function(req, res, next){
+  crud.get(req, res, "instructors");
+});
+router.get('/inscriptions', function(req, res, next){
+  crud.get(req, res, "inscriptions");
+});
+router.get('/groups', function(res, req, next){
+  crud.get(req, res, "groups");
 });
 
 /* INS DATA */
 router.post('/insClient', function(req, res, next){
-  let params = req.body;
-  mongoClient.connect(url, {useUnifiedTopology: true}, function(err, db){
-    if(err) throw err;
-    let dbo = db.db("first-mongo");
-    dbo.collection.insert();
-  });
+  crud.insert(req, res, "clients");
+});
+router.post('/insInstructor', function(req, res, next){
+  crud.insert(req, res, "instructors");
+});
+router.post('/insInscription', function(req, res, next){
+  crud.insert(req, res, "inscriptions");
+});
+router.post('/insGroup', function(req, res, next){
+  crud.insert(req, res, "groups");
 });
 
 /* UPD DATA */
+router.post("/updClient", function(req, res, next){
+  crud.update(req, res, "clients")
+});
+router.post("/updInstructor", function(req, res, next){
+  crud.update(req, res, "instructors")
+});
+router.post("/updInscription", function(req, res, next){
+  crud.update(req, res, "inscriptions")
+});
+router.post("/updGroup", function(req, res, next){
+  crud.update(req, res, "groups")
+});
 
 /*DEL DATA */
-router.post("del", function(req, res, next){
-  let params = req.body;
-  console.log(params);
-  res.end();
+router.post("/delClient", function(req, res, next){
+  crud.delet(req, res, "clients");
 });
+router.post("/delInstructor", function(req, res, next){
+  crud.delet(req, res, "clients");
+});
+router.post("/delClient", function(req, res, next){
+  crud.delet(req, res, "clients");
+});
+router.post("/delClient", function(req, res, next){
+  crud.delet(req, res, "clients");
+});
+
 
 module.exports = router;

@@ -14,24 +14,32 @@ export default defineComponent({
            tableData: Object,
            flag: false,
            currentID: null,
+           form: {
+               fname: "",
+               lname: "",
+               address: "",
+               phone: ""
+           },
            showUpd: false,
            showIns: false
        }
    },
    methods:{
-    toggleIns(){
+    toggleIns(){//INS Actions
         if(this.showIns == true)
             this.showIns = false;
         else this.showIns = true;
     },
-    submit: async () => {
-        
+    submit: async function(){
+        let form = this.form;
+        console.log(form);
+        for(var i in form)
+            if(form[i] == "" || form[i] == null)
+                return window.alert("All fields must be entered");
+        await axios.post("http://localhost:3030/insClient", JSON.stringify(form));
+        window.location.reload();
     },
-    del: async (index) => {
-        console.log(index);
-        await axios.post("http://localhost:3030/del", JSON.stringify({index: index}));
-    },
-    updShow(index){
+    updShow(index){//UPD ACTIONS
         this.toggleUpd();
         this.currentID = index;
         console.log(this.currentID);
@@ -41,10 +49,21 @@ export default defineComponent({
             this.showUpd = false;
             else this.showUpd = true;
     },
-    save: async () => {
-
+    save: async function(){
+        let form = this.form;
+        form._id = this.currentID;
+        console.log(form);
+        for(var i in form)
+            if(form[i] == "" || form[i] == null)
+                return window.alert("All fields must be entered");
+        await axios.post("http://localhost:3030/updClient", JSON.stringify(form));
+        window.location.reload();
     },
-
+    del: async function(index){//DEL ACTIONS
+        console.log(index);
+        await axios.post("http://localhost:3030/delClient", JSON.stringify({index: index}));
+        window.location.reload();
+    }
    },
    mounted: async function(){
        this.tableData = await getData();
@@ -94,19 +113,27 @@ async function getData() {
         </template>
     </Datatable>
 
-    <Modal id="insModal" :show="showIns" @close="toggleIns()">
+    <Modal id="insModal" :show="showIns" @close="toggleIns()" @save="submit()">
         <template v-slot:header>
             <h1>INSERT MODAL</h1>
         </template>
         <template v-slot:body>
+            <p>First Name:&nbsp;<input v-model="form.fname"></p>
+            <p>Last Name:&nbsp;<input v-model="form.lname"></p>
+            <p>Address:&nbsp;<input v-model="form.address"></p>
+            <p>Phone Number:&nbsp;<input v-model="form.phone"></p>
         </template>
     </Modal>
 
-    <Modal id="updModal" :show="showUpd" @close="toggleUpd()">
+    <Modal id="updModal" :show="showUpd" @close="toggleUpd()" @save="save()">
         <template v-slot:header>
-            <h1>UPDATE MODAL</h1>
+            <h1>Update Entry {{currentID}}</h1>
         </template>
         <template v-slot:body>
+            <p>First Name:&nbsp;<input v-model="form.fname"></p>
+            <p>Last Name:&nbsp;<input v-model="form.lname"></p>
+            <p>Address:&nbsp;<input v-model="form.address"></p>
+            <p>Phone Number:&nbsp;<input v-model="form.phone"></p>
         </template>
     </Modal>
 </div>
