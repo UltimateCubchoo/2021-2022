@@ -15,11 +15,8 @@ export default defineComponent({
            flag: false,
            currentID: null,
            form: {
-               fname: "",
-               lname: "",
-               address: "",
-               phone: "",
-               specialty: "",
+               date: "",
+               regi_price: null
            },
            showUpd: false,
            showIns: false
@@ -37,7 +34,7 @@ export default defineComponent({
         for(var i in form)
             if(form[i] == "" || form[i] == null)
                 return window.alert("All fields must be entered");
-        await axios.post("http://localhost:3030/insInstructor", JSON.stringify(form));
+        await axios.post("http://localhost:3030/insInscription", JSON.stringify(form));
         window.location.reload();
     },
     updShow(index){//UPD ACTIONS
@@ -57,12 +54,12 @@ export default defineComponent({
         for(var i in form)
             if(form[i] == "" || form[i] == null)
                 return window.alert("All fields must be entered");
-        await axios.post("http://localhost:3030/updInstructor", JSON.stringify(form));
+        await axios.post("http://localhost:3030/updInscription", JSON.stringify(form));
         window.location.reload();
     },
     del: async function(index){//DEL ACTIONS
         console.log(index);
-        await axios.post("http://localhost:3030/delInstructor", JSON.stringify({index: index}));
+        await axios.post("http://localhost:3030/delInscription", JSON.stringify({index: index}));
         window.location.reload();
     }
    },
@@ -75,7 +72,7 @@ export default defineComponent({
 
 async function getData() {
     try {
-        var res = await axios.get("http://localhost:3030/instructors");
+        var res = await axios.get("http://localhost:3030/inscriptions");
         var data = res.data;
         console.log("Data: ");
         console.log(data);
@@ -93,21 +90,15 @@ async function getData() {
     <Datatable v-if="flag">
         <template v-slot:thead>
             <tr>
-                <th>Fname</th>
-                <th>Lname</th>
-                <th>Address</th>
-                <th>Phone</th>
-                <th>Specialty</th>
+                <th>Date</th>
+                <th>Registration Price</th>
                 <th>Actions</th>
             </tr>
         </template>
         <template v-slot:tbody >
             <tr v-for="(obj, index) in tableData" :key="index">
-                <td>{{obj.fname}}</td>
-                <td>{{obj.lname}}</td>
-                <td>{{obj.address}}</td>
-                <td>{{obj.phone}}</td>
-                <td>{{obj.specialty}}</td>
+                <td>{{obj.date}}</td>
+                <td>${{parseFloat(obj.regi_price).toFixed(2)}}</td>
                 <td>
                     <span class="fa fa-pencil" style="color: #00a100; margin-right: 2rem; cursor: pointer;" @click="updShow(obj._id)"/>
                     <span class="fa fa-minus-circle" style="color: #a10000; cursor: pointer;" @click="del(obj._id)"/>
@@ -121,11 +112,8 @@ async function getData() {
             <h1>INSERT MODAL</h1>
         </template>
         <template v-slot:body>
-            <p>First Name:&nbsp;<input v-model="form.fname"></p>
-            <p>Last Name:&nbsp;<input v-model="form.lname"></p>
-            <p>Address:&nbsp;<input v-model="form.address"></p>
-            <p>Phone Number:&nbsp;<input v-model="form.phone"></p>
-            <p>Specialty:&nbsp;<input v-model="form.specialty"></p>
+            <p>Date of Registration:&nbsp;<input type="date" v-model="form.date"></p>
+            <p>Registration Price:&nbsp;<input type="text" v-model="form.regi_price"></p>
         </template>
     </Modal>
 
@@ -134,11 +122,8 @@ async function getData() {
             <h1>Update Entry {{currentID}}</h1>
         </template>
         <template v-slot:body>
-            <p>First Name:&nbsp;<input v-model="form.fname"></p>
-            <p>Last Name:&nbsp;<input v-model="form.lname"></p>
-            <p>Address:&nbsp;<input v-model="form.address"></p>
-            <p>Phone Number:&nbsp;<input v-model="form.phone"></p>
-            <p>Specialty:&nbsp;<input v-model="form.specialty"></p>
+            <p>Date of Registration:&nbsp;<input type="date" v-model="form.date"></p>
+            <p>Registration Price:&nbsp;<input type="text" v-model="form.regi_price"></p>
         </template>
     </Modal>
 </div>
