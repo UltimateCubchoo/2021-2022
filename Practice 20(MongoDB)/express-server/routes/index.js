@@ -2,6 +2,12 @@ var express = require('express');
 var router = express.Router();
 var crud = require("./crud.js");
 
+/*Create Failsafes*/
+router.get('/createdb', function(req, res, next){
+  console.log("createdb");
+  crud.createdb();
+});
+
 /* GET DATA */
 router.get('/clients', function(req, res, next) {
   crud.get(req, res, "clients");
@@ -12,7 +18,7 @@ router.get('/instructors', function(req, res, next){
 router.get('/inscriptions', function(req, res, next){
   crud.get(req, res, "inscriptions");
 });
-router.get('/groups', function(res, req, next){
+router.get('/groups', function(req, res, next){
   crud.get(req, res, "groups");
 });
 
@@ -50,13 +56,13 @@ router.post("/delClient", function(req, res, next){
   crud.delet(req, res, "clients");
 });
 router.post("/delInstructor", function(req, res, next){
-  crud.delet(req, res, "clients");
+  crud.delet(req, res, "instructors");
 });
-router.post("/delClient", function(req, res, next){
-  crud.delet(req, res, "clients");
+router.post("/delInscription", function(req, res, next){
+  crud.delet(req, res, "inscriptions");
 });
-router.post("/delClient", function(req, res, next){
-  crud.delet(req, res, "clients");
+router.post("/delGroup", function(req, res, next){
+  crud.delet(req, res, "groups");
 });
 
 

@@ -61,7 +61,7 @@ export default defineComponent({
         console.log(index);
         await axios.post("http://localhost:3030/delInscription", JSON.stringify({index: index}));
         window.location.reload();
-    }
+    },
    },
    mounted: async function(){
        this.tableData = await getData();
