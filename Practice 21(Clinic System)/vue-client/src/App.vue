@@ -1,12 +1,37 @@
-<script setup lang="ts">
-// This starter template is using Vue 3 <script setup> SFCs
-// Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
-import HelloWorld from './components/HelloWorld.vue'
+<script setup lang="js">
+import {defineComponent} from 'vue'
+import Header from './components/Header.vue'
+import Home from './views/Home.vue'
+import Patient_View from './views/Patients.vue'
+import Doctor_View from './views/Doctors.vue'
+import Appointment_View from './views/Appointments.vue'
+
+const routes = {
+  '/': Home,
+  '/patients': Patient_View,
+  '/doctors': Doctor_View, 
+  '/appointments': Appointment_View,
+}
+
+export default defineComponent({
+  components: {
+    Header: Header
+  },
+  computed:{
+    currentView(){
+      var href = window.location.pathname;
+      console.log(href);
+      return routes[href];
+    }
+  }
+});
 </script>
 
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Hello Vue 3 + TypeScript + Vite" />
+  <div>
+    <Header></Header>
+    <component :is="currentView"></component>
+  </div>
 </template>
 
 <style>
@@ -16,6 +41,8 @@ import HelloWorld from './components/HelloWorld.vue'
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+}
+main{
+  margin-top: 1rem;
 }
 </style>
