@@ -36,14 +36,15 @@ export default defineComponent({
       var data = JSON.parse(res.data);
       for(var i in data){
         // console.log(data[i].user);
-        if(data[i].user == user){
+        if(data[i].user == user && data[i].pass == pass){
           console.log("Match");
           console.log(data[i]);
+          localStorage.setItem("loginStatus", JSON.stringify({isLoggedIn: true, isAdmin: data[i].perms}));
+          return window.location.reload();
         }
       }
-      console.log(data);
-      localStorage.setItem("loginStatus", JSON.stringify({isLoggedIn: true, isAdmin: false}));
-      // window.location.reload();
+      window.alert("Enter valid credentials...");
+      return window.location.reload();
     },
     logout(){
       localStorage.removeItem("loginStatus");
