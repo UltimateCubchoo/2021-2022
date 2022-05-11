@@ -17,13 +17,9 @@ export default defineComponent({
       showIns: false,
       currentID: null,
       form: {
-          fname: "",
-          lname: "",
-          sex: "",
-          birthdate: "",
-          address: "",
-          phone: "",
-          zip: "",
+          user: "",
+          pass: "",
+          perms: false,
       }
     };
   },
@@ -37,9 +33,9 @@ export default defineComponent({
         var form = this.form;
         console.log(JSON.stringify(form));
         for(var i in form)
-            if(form[i] == "" || form[i] == null)
+            if(form[i] === "")
                 return window.alert("All fields must be entered");
-        await axios.post("http://localhost:3030/insPatient", JSON.stringify(form));
+        await axios.post("http://localhost:3030/insUser", JSON.stringify(form));
         alert("Entry added");
         return window.location.reload();
     },
@@ -59,12 +55,12 @@ export default defineComponent({
        for(var i in form)
             if(form[i] == "" || form[i] == null)
                 return window.alert("All fields must be entered");
-        await axios.post("http://localhost:3030/updPatient", JSON.stringify(form));
+        await axios.post("http://localhost:3030/updUser", JSON.stringify(form));
         alert("Entry changed");
         return window.location.reload();
     },
     del: async function(index){
-        await axios.post("http://localhost:3030/delPatient", JSON.stringify({index: index}));
+        await axios.post("http://localhost:3030/delUser", JSON.stringify({index: index}));
         return window.location.reload();
     },
   },
@@ -77,7 +73,7 @@ export default defineComponent({
 
 async function getData(){
     try {
-        var res = await axios.get("http://localhost:3030/patients");
+        var res = await axios.get("http://localhost:3030/users");
         var data = JSON.parse(res.data);
         return data;
     } catch (err) {
@@ -85,7 +81,6 @@ async function getData(){
         return [];
     }
 }
-
 </script>
 
 
@@ -93,29 +88,21 @@ async function getData(){
 <template>
   <main>
     <span class="fa fa-plus" id="insButton" @click="toggleIns()" />
-    <h1>Patients</h1>
+    <h1>Users</h1>
     <Datatable v-if="flag">
       <template v-slot:thead>
         <tr>
-          <th>First Name</th>
-          <th>Last Name</th>
-          <th>Sex</th>
-          <th>Birth Date</th>
-          <th>Phone Number</th>
-          <th>Address</th>
-          <th>Zip Code</th>
-          <th>Actions</th>
+            <th>Username</th>
+            <th>Password</th>
+            <th>Admin Permissions</th>
+            <th>Actions</th>
         </tr>
       </template>
       <template v-slot:tbody>
           <tr v-for="(obj, index) in tableData" :key="index">
-              <td>{{tableData[index].fname}}</td>
-              <td>{{obj.lname}}</td>
-              <td>{{obj.sex}}</td>
-              <td>{{obj.birthdate}}</td>
-              <td>{{obj.phone}}</td>
-              <td>{{obj.address}}</td>
-              <td>{{obj.zip}}</td>
+              <td>{{obj.user}}</td>
+              <td>{{obj.pass}}</td>
+              <td>{{obj.perms}}</td>
               <td>
                     <span class="fa fa-pencil" style="color: #00a100; margin-right: 2rem; cursor: pointer;" @click="updShow(obj._id)"/>
                     <span class="fa fa-minus-circle" style="color: #a10000; cursor: pointer;" @click="del(obj._id)"/>
@@ -129,13 +116,9 @@ async function getData(){
         <h1>New Entry</h1>
       </template>
       <template v-slot:body>
-        <p>First Name:&nbsp;<input v-model="form.fname" /></p>
-        <p>Last Name:&nbsp;<input v-model="form.lname" /></p>
-        <p>Sex:&nbsp;<input v-model="form.sex" /></p>
-        <p>Birthdate:&nbsp;<input type="date" v-model="form.birthdate" /></p>
-        <p>Address:&nbsp;<input v-model="form.address" /></p>
-        <p>Phone Number:&nbsp;<input v-model="form.phone" /></p>
-        <p>Zip Code:&nbsp;<input v-model="form.zip" /></p>
+        <p>Username:&nbsp;<input v-model="form.user"></p>
+        <p>Password:&nbsp;<input v-model="form.pass"></p>
+        <p><input type="checkbox" v-model="form.perms">&nbsp;Admin?</p>
       </template>
     </Modal>
 
@@ -144,13 +127,8 @@ async function getData(){
         <h1>Update Entry {{ currentID }}</h1>
       </template>
       <template v-slot:body>
-        <p>First Name:&nbsp;<input v-model="form.fname" /></p>
-        <p>Last Name:&nbsp;<input v-model="form.lname" /></p>
-        <p>Sex:&nbsp;<input v-model="form.sex" /></p>
-        <p>Birthdate:&nbsp;<input type="date" v-model="form.birthdate" /></p>
-        <p>Address:&nbsp;<input v-model="form.address" /></p>
-        <p>Phone Number:&nbsp;<input v-model="form.phone" /></p>
-        <p>Zip Code:&nbsp;<input v-model="form.zip" /></p>
+        <p>Username:&nbsp;<input v-model="form.user"></p>
+        <p>Password:&nbsp;<input v-model="form.pass"></p>
       </template>
     </Modal>
   </main>

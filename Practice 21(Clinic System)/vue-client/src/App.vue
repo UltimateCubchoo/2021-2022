@@ -5,17 +5,50 @@ import Home from './views/Home.vue'
 import Patient_View from './views/Patients.vue'
 import Doctor_View from './views/Doctors.vue'
 import Appointment_View from './views/Appointments.vue'
+import User_View from './views/Users.vue'
+import axios from 'axios'
 
 const routes = {
   '/': Home,
   '/patients': Patient_View,
   '/doctors': Doctor_View, 
   '/appointments': Appointment_View,
+  '/users': User_View,
 }
 
 export default defineComponent({
   components: {
     Header: Header
+  },
+  data(){
+    return{
+      isLoggedIn: Boolean,
+      isAdmin: Boolean,
+    }
+  },
+  methods:{
+    login: async function(){
+      var user = window.$("#user").val();
+      var pass = window.$("#pass").val();
+      console.log(`User: ${user}, pass: ${pass}, isLoggedIn: ${this.isLoggedIn}`);
+
+      var res = await axios.get("http://localhost:3030/users");
+      var data = JSON.parse(res.data);
+      for(var i in data){
+        // console.log(data[i].user);
+        if(data[i].user == user){
+          console.log("Match");
+          console.log(data[i]);
+        }
+      }
+      console.log(data);
+      localStorage.setItem("loginStatus", JSON.stringify({isLoggedIn: true, isAdmin: false}));
+      // window.location.reload();
+    },
+    logout(){
+      localStorage.removeItem("loginStatus");
+      window.location.reload();
+    }
   },
   computed:{
     currentView(){
@@ -23,18 +56,37 @@ export default defineComponent({
       console.log(href);
       return routes[href];
     }
+  },
+  mounted(){
+    var status = JSON.parse(localStorage.getItem("loginStatus"))
+    if(status == null){
+      this.isLoggedIn = false;
+      this.isAdmin = false;
+      return;
+    }
+    this.isLoggedIn = status.isLoggedIn;
+    this.isAdmin = status.isAdmin;
   }
 });
 </script>
 
 <template>
   <div>
-    <Header></Header>
-    <component :is="currentView"></component>
+    <Header :isLoggedIn="isLoggedIn" :isAdmin="isAdmin"></Header>
+    <component :is="currentView" :isLoggedIn="isLoggedIn" :isAdmin="isAdmin" @login="login()" @logout="logout()"></component>
   </div>
 </template>
 
 <style>
+body, td{
+  background-color: #0a0a0a;
+}
+input, h1, p, label, select, td, th{
+  background-color: #0a0a0a;
+  color: whitesmoke !important;
+}
+
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
