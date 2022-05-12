@@ -57,4 +57,8 @@ router.post("/delUser", function(req, res, next){
   crud.delet(req, res, "users");
 });
 
+router.post("/search", function(req, res, next){
+  crud.search(req, res);
+});
+
 module.exports = router;

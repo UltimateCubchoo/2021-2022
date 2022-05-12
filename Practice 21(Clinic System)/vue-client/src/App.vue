@@ -22,8 +22,8 @@ export default defineComponent({
   },
   data(){
     return{
-      isLoggedIn: Boolean,
-      isAdmin: Boolean,
+      isLoggedIn: false,
+      isAdmin: false,
     }
   },
   methods:{

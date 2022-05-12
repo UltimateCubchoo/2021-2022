@@ -72,7 +72,44 @@ function get(req, res, collection){
       res.end();
     });
   }
-  
+
+  function search(req, res){
+    var json = Object.keys(req.body)[0];
+    var searchTerm = JSON.parse(json).term;
+    console.log("Search Term: " + searchTerm);
+
+    mongoClient.connect(url, {useUnifiedTopology: true}, function(err, db){
+      if(err) throw err;
+      var dbo = db.db(dbName);
+
+      var patients = [];
+      dbo.collection("patients").find({ $or: [{lname: searchTerm}, {fname: searchTerm}] }).toArray(function(err, data){
+        if(err) throw err;
+        console.log(data);
+        patients = data;
+      });
+
+      var doctors = [];
+      dbo.collection("doctors").find({ $or: [{lname: searchTerm}, {fname: searchTerm}] }).toArray(function(err, data){
+        if(err) throw err;
+        console.log(data);
+        doctors = data;
+
+        var d0 = false;
+        var d1 = false;
+        if(patients != [])
+          d0 = true;
+        if(doctors != [])
+          d1 = true;
+        console.log(`${patients} && ${d0}`);
+        console.log(`${doctors} && ${d1}`);
+        res.json(JSON.stringify({d0: d0, d1: d1}));
+      });
+        
+
+    });
+  }
+
   // function convert(req, res, collection){
   //   var json = Object.keys(req.body)[0];
   //   var obj = JSON.parse(json);
@@ -88,4 +125,5 @@ function get(req, res, collection){
   module.exports.insert = insert;
   module.exports.update = update;
   module.exports.delet = delet;
+  module.exports.search = search;
   // module.exports.convert = convert;
