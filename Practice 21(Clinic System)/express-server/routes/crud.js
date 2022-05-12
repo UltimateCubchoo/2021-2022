@@ -97,16 +97,14 @@ function get(req, res, collection){
 
         var d0 = false;
         var d1 = false;
-        if(patients != [])
+        if(patients[0] != undefined)
           d0 = true;
-        if(doctors != [])
+        if(doctors[0] != undefined)
           d1 = true;
-        console.log(`${patients} && ${d0}`);
-        console.log(`${doctors} && ${d1}`);
+        console.log(`${JSON.stringify(patients)} && ${d0}`);
+        console.log(`${JSON.stringify(doctors)} && ${d1}`);
         res.json(JSON.stringify({d0: d0, d1: d1}));
       });
-        
-
     });
   }
 

@@ -9,9 +9,23 @@ export default{
         search: async function(){
             var term = $("#term").val();
             console.log("search: " + term);
-            await axios.post("http://localhost:3030/search", JSON.stringify({term: term}));
+            var res = await axios.post("http://localhost:3030/search", JSON.stringify({term: term}));
+            searchRes(res);
         }
     }
+}
+
+function searchRes(res){
+    var obj = JSON.parse(res.data);
+    console.log(obj);
+    var message = "The person you are looking for is found in";
+    if(obj.d0 && obj.d1)
+        message += " patients & doctors, hmm we may have twins in our grasps.";
+    else if(obj.d0)
+        message += " patients.";
+    else if(obj.d1)
+        message += " doctors.";
+    window.alert(message);
 }
 </script>
 
