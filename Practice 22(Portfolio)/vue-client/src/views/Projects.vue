@@ -1,3 +1,29 @@
+<script lang="ts">
+import {defineComponent} from "vue"
+import axios from "axios"
+export default defineComponent({
+    data(){
+        return {
+            data: [
+                {}
+            ],
+            flag: false,
+        }
+    },
+    mounted: async function(){
+        this.data = await getData();
+        console.log(this.data);
+        this.flag = true;
+    }     
+});
+
+async function getData(){
+    // var res = await axios.get("http://localhost:3030/projects");
+    // var data = JSON.parse(res.data);
+    // return data;
+}
+</script>
+
 <template>
 <!-- Projects-->
         <section class="projects-section bg-light" id="projects">
@@ -12,7 +38,7 @@
                         </div>
                     </div>
                 </div>
-                <!-- Project One Row-->
+                <!-- Project One Row // Image left-->
                 <div class="row gx-0 mb-5 mb-lg-0 justify-content-center">
                     <div class="col-lg-6"><img class="img-fluid" src="/img/demo-image-01.jpg" alt="..." /></div>
                     <div class="col-lg-6">
@@ -27,7 +53,7 @@
                         </div>
                     </div>
                 </div>
-                <!-- Project Two Row-->
+                <!-- Project Two Row \\ Image Right-->
                 <div class="row gx-0 justify-content-center">
                     <div class="col-lg-6"><img class="img-fluid" src="/img/demo-image-02.jpg" alt="..." /></div>
                     <div class="col-lg-6 order-lg-first">
