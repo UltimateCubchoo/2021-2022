@@ -1,0 +1,32 @@
+[
+    {
+        "image": "bg-masthead.jpg",
+        "name": "Shoreline",
+        "description": "Grayscale is open source and MIT licensed. This means you can use it for any project - even commercial projects! Download it, customize it, and publish your website!",
+        "link": "#"
+    },
+    {
+        "image": "demo-image-01.jpg",
+        "name": "Misty",
+        "description": "An example of where you can put an image of a project, or anything else, along with a description.",
+        "link": "#"
+    },
+    {
+        "image": "demo-image-02.jpg",
+        "name": "Mountains",
+        "description": "Another example of a project with its respective description. These sections work well responsively as well, try this theme on a small screen!",
+        "link": "#"
+    },
+    {
+        "image": "demo-image-01.jpg",
+        "name": "2021-2022",
+        "description": "Projects from this course. All work during the first half of the highschool class from my school at Lorenzo Walker & under the teachings of Ronald Rolando",
+        "link": "https://github.com/UltimateCubchoo/2021-2022"
+    },
+    {
+        "image": "demo-image-02.jpg",
+        "name": "C++ Course",
+        "description": "Course I'm taking for Udemy",
+        "link": "https://github.com/UlitmateCubchoo/CPP-COURSE"
+    }
+]

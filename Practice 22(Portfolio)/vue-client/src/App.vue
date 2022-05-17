@@ -4,7 +4,7 @@ import Navigation from "./components/Nav.vue"
 import Masthead from "./views/Masthead.vue"
 import About from "./views/About.vue"
 import Projects from "./views/Projects.vue"
-import Signup from "./views/Signup.vue"
+import Doggo from "./views/Doggo.vue"
 import Contact from "./views/Contact.vue"
 import Footer from "./components/Footer.vue"
 export default defineComponent({
@@ -14,20 +14,22 @@ export default defineComponent({
       About: About,
       Contact: Contact, 
       Projects: Projects,
-      Signup: Signup,
+      Doggo: Doggo,
       Footer: Footer
     }
 });
 </script>
 
 <template>
+<main>
   <Navigation></Navigation>
   <Masthead></Masthead>
   <About></About>
   <Projects></Projects>
-  <Signup></Signup>
+  <Doggo></Doggo>
   <Contact></Contact>
   <Footer></Footer>    
+</main>
 </template>
 
 <style>

@@ -6,9 +6,10 @@
                     <div class="col-lg-8">
                         <h2 class="text-white mb-4">Gamer and Developer</h2>
                         <p class="text-white-50">
-                            Grayscale is a free Bootstrap theme created by Start Bootstrap. It can be yours right now, simply download the template on
-                            <a href="https://startbootstrap.com/theme/grayscale/">the preview page.</a>
-                            The theme is open source, and you can use it for any purpose, personal or commercial.
+                            We're no strangers to love
+                            You know the rules and so do I (do I)
+                            A full commitment's what I'm thinking of
+                            You wouldn't get this from any other guy
                         </p>
                     </div>
                 </div>
